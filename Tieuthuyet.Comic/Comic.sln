@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comic", "Comic\Comic.csproj", "{C8605EC0-C717-4562-A7B6-F490CC50B920}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiktak.CC", "Tiktak.CC\Tiktak.CC.csproj", "{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicTests", "ComicTests\ComicTests.csproj", "{9E713915-8427-471F-A035-E4C482CC4DD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Debug|ARM.ActiveCfg = Debug|ARM
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Debug|ARM.Build.0 = Debug|ARM
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Debug|ARM.Deploy.0 = Debug|ARM
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Debug|x86.ActiveCfg = Debug|x86
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Debug|x86.Build.0 = Debug|x86
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Debug|x86.Deploy.0 = Debug|x86
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Release|ARM.ActiveCfg = Release|ARM
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Release|ARM.Build.0 = Release|ARM
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Release|ARM.Deploy.0 = Release|ARM
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Release|x86.ActiveCfg = Release|x86
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Release|x86.Build.0 = Release|x86
+		{C8605EC0-C717-4562-A7B6-F490CC50B920}.Release|x86.Deploy.0 = Release|x86
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Debug|ARM.Build.0 = Debug|ARM
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Debug|x86.ActiveCfg = Debug|x86
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Debug|x86.Build.0 = Debug|x86
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Release|ARM.ActiveCfg = Release|ARM
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Release|ARM.Build.0 = Release|ARM
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Release|x86.ActiveCfg = Release|x86
+		{5436CB11-19D4-44BE-BBB0-DD6E83C36C7E}.Release|x86.Build.0 = Release|x86
+		{9E713915-8427-471F-A035-E4C482CC4DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E713915-8427-471F-A035-E4C482CC4DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E713915-8427-471F-A035-E4C482CC4DD8}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{9E713915-8427-471F-A035-E4C482CC4DD8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9E713915-8427-471F-A035-E4C482CC4DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E713915-8427-471F-A035-E4C482CC4DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E713915-8427-471F-A035-E4C482CC4DD8}.Release|ARM.ActiveCfg = Release|Any CPU
+		{9E713915-8427-471F-A035-E4C482CC4DD8}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

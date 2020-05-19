@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en-US</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>MY APPLICATION</value>
+  </data>
+  <data name="AppBarButtonText" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="AppBarMenuItemText" xml:space="preserve">
+    <value>Menu Item</value>
+  </data>
+  <data name="CategoryTitle" xml:space="preserve">
+    <value>categories</value>
+  </data>
+  <data name="EnterKeyWord" xml:space="preserve">
+    <value>Enter key word</value>
+  </data>
+  <data name="LatestTitle" xml:space="preserve">
+    <value>last updated</value>
+  </data>
+  <data name="TopPopular" xml:space="preserve">
+    <value>TOP POPULAR</value>
+  </data>
+  <data name="AppBar_Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="AppBar_Refresh" xml:space="preserve">
+    <value>refresh</value>
+  </data>
+  <data name="AppBar_Search" xml:space="preserve">
+    <value>search</value>
+  </data>
+  <data name="AppBar_Top" xml:space="preserve">
+    <value>top popular</value>
+  </data>
+  <data name="ChapterList" xml:space="preserve">
+    <value>chapters</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading Content</value>
+  </data>
+  <data name="SearchHint" xml:space="preserve">
+    <value>Enter your keyword</value>
+  </data>
+  <data name="SearchLabel" xml:space="preserve">
+    <value>SEARCH</value>
+  </data>
+  <data name="SearchResultLabel" xml:space="preserve">
+    <value>SEARCH RESULTS</value>
+  </data>
+  <data name="SearchEmpty" xml:space="preserve">
+    <value>We couldn't find a match</value>
+  </data>
+  <data name="HtmlFooter" xml:space="preserve">
+    <value>&lt;br&gt;&lt;br&gt;&lt;/body&gt;
+&lt;html&gt;</value>
+  </data>
+  <data name="HtmlHeader" xml:space="preserve">
+    <value>&lt;html&gt;&lt;head&gt;
+&lt;link href='http://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /&gt;
+	&lt;style&gt;
+	body{
+		font-size:13pt;
+		width:100%;
+		color: #582700;
+		background: #FFEFD4;
+		}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;script type="text/javascript"&gt;
+function ChangeFontFamily(){
+	
+}
+&lt;/script&gt;
+&lt;body id="pageBody"&gt;</value>
+  </data>
+  <data name="Error_Connection" xml:space="preserve">
+    <value>Can't communicate with server to retrieve data. You want to close App?</value>
+  </data>
+  <data name="Error_Title" xml:space="preserve">
+    <value>Error occur</value>
+  </data>
+  <data name="AboutUs_Content1" xml:space="preserve">
+    <value>The application was built and developed by Tiktak and ComicToGo team.</value>
+  </data>
+  <data name="AboutUs_Content2" xml:space="preserve">
+    <value>For additional information, please click on the following link</value>
+  </data>
+  <data name="AppBar_AboutUs" xml:space="preserve">
+    <value>about us</value>
+  </data>
+  <data name="AppBar_Menu" xml:space="preserve">
+    <value>chapters list</value>
+  </data>
+  <data name="AppBar_Next" xml:space="preserve">
+    <value>next</value>
+  </data>
+  <data name="AppBar_Previous" xml:space="preserve">
+    <value>previous</value>
+  </data>
+  <data name="AppBar_Rate" xml:space="preserve">
+    <value>rate it!</value>
+  </data>
+  <data name="lang" xml:space="preserve">
+    <value>en</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>my novels</value>
+  </data>
+  <data name="AppBar_DeleteAll" xml:space="preserve">
+    <value>delete all</value>
+  </data>
+  <data name="AppBar_TextEdit" xml:space="preserve">
+    <value>format</value>
+  </data>
+</root>

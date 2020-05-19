@@ -1,0 +1,36 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing" 
+    x:Class="Comic.Views.Shared.ProgressSreenView"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <Storyboard x:Name="InProgress"  RepeatBehavior="Forever">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="arc">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-85.895"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot"   >
+    	<es:Arc x:Name="arc" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" HorizontalAlignment="Right" Height="20" Margin="0,20,20,0" Stretch="None" Stroke="{x:Null}" UseLayoutRounding="False" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.5,0.5">
+    		<es:Arc.RenderTransform>
+    			<CompositeTransform/>
+    		</es:Arc.RenderTransform>
+    		<es:Arc.Fill>
+    			<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+    				<GradientStop Color="#FFE95E11" Offset="1"/>
+    				<GradientStop Color="#FFE95E11"/>
+    			</LinearGradientBrush>
+    		</es:Arc.Fill>
+    	</es:Arc>
+    </Grid>
+</UserControl>

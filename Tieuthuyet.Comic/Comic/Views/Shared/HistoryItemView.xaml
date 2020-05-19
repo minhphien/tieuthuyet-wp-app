@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Comic.Views.Shared.HistoryItemView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"             
+    d:DesignWidth="480" >
+
+    <Grid Margin="-12,8,0,8"
+               Background="{StaticResource TransparentBrush}"
+               cal:Message.Attach="[Event Tap] = [Action ItemTap($dataContext)]">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Width="120" Height="160" Source="{Binding Path=Content.Image}" VerticalAlignment="Top" Stretch="UniformToFill"/>
+        <StackPanel Grid.Column="1" VerticalAlignment="Top">
+            <TextBlock Text="{Binding Path=Content.NovelName}" Style="{StaticResource PhoneTextNormalStyle}" 
+                       FontFamily="{StaticResource PhoneFontFamilyLight}" Margin="12,-12,12,6" 
+                       VerticalAlignment="Top" TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding Path=Content.ChapterName}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" FontFamily="{StaticResource PhoneFontFamilySemiBold}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=Content.Author}" Style="{StaticResource PhoneTextSmallStyle}" FontFamily="{StaticResource PhoneFontFamilySemiBold}"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

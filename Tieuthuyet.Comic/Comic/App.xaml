@@ -1,0 +1,64 @@
+﻿<Application
+    x:Class="Comic.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Comic"
+    xmlns:converter="clr-namespace:Comic.Converter"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    UnhandledException="Application_UnhandledException"
+    >
+    <!--Application Resources-->
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ComicStyle.xaml" />
+                <ResourceDictionary>
+                    <local:LocalizedStrings x:Key="LocalizedStrings"/>
+                    <local:ComicBootstrapper x:Key="Bootstrapper" />
+                    <converter:GroupToBackgroundBrushValueConverter x:Key="GroupBackground"/>
+                    <converter:GroupToForegroundBrushValueConverter x:Key="GroupForeground"/>
+                    <converter:VisibilityConverter x:Key="Loading"/>
+                    <Style x:Name="TransitionStyle" TargetType="phone:PhoneApplicationPage">
+                        <Setter Property="shell:SystemTray.IsVisible" Value="False" />
+                        <Setter Property="toolkit:TransitionService.NavigationInTransition">
+                            <Setter.Value>
+                                <toolkit:NavigationInTransition>
+                                    <toolkit:NavigationInTransition.Backward>
+                                        <toolkit:TurnstileFeatherTransition Mode="BackwardIn"/>
+                                    </toolkit:NavigationInTransition.Backward>
+                                    <toolkit:NavigationInTransition.Forward>
+                                        <toolkit:TurnstileFeatherTransition Mode="ForwardIn" BeginTime="0:0:0.7"/>
+                                    </toolkit:NavigationInTransition.Forward>
+                                </toolkit:NavigationInTransition>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="toolkit:TransitionService.NavigationOutTransition">
+                            <Setter.Value>
+                                <toolkit:NavigationOutTransition>
+                                    <toolkit:NavigationOutTransition.Backward>
+                                        <toolkit:TurnstileFeatherTransition Mode="BackwardOut"/>
+                                    </toolkit:NavigationOutTransition.Backward>
+                                    <toolkit:NavigationOutTransition.Forward>
+                                        <toolkit:TurnstileFeatherTransition Mode="ForwardOut"/>
+                                    </toolkit:NavigationOutTransition.Forward>
+                                </toolkit:NavigationOutTransition>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+
+    <!--<Application.ApplicationLifetimeObjects>
+        <!Required object that handles lifetime events for the application
+        <shell:PhoneApplicationService
+            Launching="Application_Launching" Closing="Application_Closing"
+            Activated="Application_Activated" Deactivated="Application_Deactivated"/>
+    </Application.ApplicationLifetimeObjects>-->
+
+</Application>
+        

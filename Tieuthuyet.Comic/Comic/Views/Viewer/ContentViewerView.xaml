@@ -1,0 +1,111 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Comic.Views.Viewer.ContentViewerView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Components="clr-namespace:Comic.Views.Shared"
+    xmlns:data="clr-namespace:Comic.Converter"
+    xmlns:tiktak="clr-namespace:Tiktak.CC.Controls;assembly=Tiktak.CC"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False"    
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    BackKeyPress="PhoneApplicationPage_BackKeyPress"
+    Style="{StaticResource TransitionStyle}"
+    >
+    <phone:PhoneApplicationPage.Resources>
+        <data:VisibilityConverter x:Key="VisibilityConvert"/>
+    </phone:PhoneApplicationPage.Resources>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#FFFFEFD4"  >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Canvas Width="5" Grid.Column="0" Background="#FFEA5A09" />
+            
+            <ScrollViewer 
+                VerticalScrollBarVisibility="Auto" 
+                Grid.Column="1" 
+                HorizontalScrollBarVisibility="Disabled"
+                Name="ContentContainer"
+                >
+                <tiktak:HtmlTextFlow 
+                    Name="HtmlViewer" Html="{Binding content}" 
+                    DefaultFontFamily="/Comic;component/Fonts/Arno Pro.ttf#Arno Pro" 
+                    DefaultFontSize="33" Margin="10" H3FontFamily="/Comic;component/Fonts/SFUGlytusLight.TTF#SFU Glytus" 
+                    H3FontSize="26" H3FontStretch="Condensed" H3FontWeight="Normal" Tap="HtmlViewer_Tap">
+                    <tiktak:HtmlTextFlow.DefaultForeground>
+                        <SolidColorBrush Color="{StaticResource PhoneTextCaretColor}"/>
+                    </tiktak:HtmlTextFlow.DefaultForeground>
+                    <tiktak:HtmlTextFlow.H3Foreground>
+                        <SolidColorBrush Color="{StaticResource PhoneTextBoxForegroundColor}"/>
+                    </tiktak:HtmlTextFlow.H3Foreground>
+                    <tiktak:HtmlTextFlow.H2Foreground>
+                        <SolidColorBrush Color="{StaticResource PhoneTextBoxForegroundColor}"/>
+                    </tiktak:HtmlTextFlow.H2Foreground>
+                    <tiktak:HtmlTextFlow.H1Foreground>
+                        <SolidColorBrush Color="{StaticResource PhoneTextCaretColor}"/>
+                    </tiktak:HtmlTextFlow.H1Foreground>
+                </tiktak:HtmlTextFlow>
+            
+            </ScrollViewer>
+            <!--<phone:WebBrowser Grid.Column="1"
+                              Name="mainViewer"
+                              IsScriptEnabled="True"
+                              Helper:WebViewHelper.HtmlUri="{Binding content}"
+                              FontFamily="/Comic;component/Fonts/SFUGlytusRegular.TTF#SFU Glytus" FontSize="24" 
+                              Background="{Binding Background, ElementName=LayoutRoot}" Padding="10" 
+                              />-->
+        </Grid>
+        
+        <ContentControl Name="FormatBar" Grid.RowSpan="2" VerticalAlignment="Bottom"></ContentControl>
+        
+        <Grid Name="chapterList" Grid.RowSpan="2" 
+              Background="{StaticResource PhoneChromeBrush}" 
+              Visibility="{Binding chapterListVisibility,Converter={StaticResource VisibilityConvert}}">
+            <toolkit:LongListMultiSelector
+                        Grid.Row="1"
+                        Margin="5"
+                        ItemsSource="{Binding Path=chapterList.chapterList}"
+                        LayoutMode="Grid"
+                        GridCellSize="225,130"
+                        IsGroupingEnabled="False"
+                        VerticalAlignment="Stretch"
+                        toolkit:TiltEffect.IsTiltEnabled="True"     
+                        toolkit:TurnstileFeatherEffect.FeatheringIndex="1">
+                <toolkit:LongListMultiSelector.ItemTemplate>
+                    <DataTemplate>
+                        <Grid >
+                            <Components:ChapterItemView DataContext="{Binding}" />
+                        </Grid>
+                    </DataTemplate>
+                </toolkit:LongListMultiSelector.ItemTemplate>
+            </toolkit:LongListMultiSelector>
+        </Grid>
+        <Components:ProgressSreenView 
+            Grid.RowSpan="2"
+            Visibility="{Binding IsLoading,Converter={StaticResource VisibilityConvert}}" />
+    </Grid>
+    
+    <phone:PhoneApplicationPage.ApplicationBar >
+        <shell:ApplicationBar  IsVisible="True" x:Name="AppBar">
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

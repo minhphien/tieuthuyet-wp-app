@@ -1,0 +1,123 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                    xmlns:primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone"
+                    xmlns:bar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar">
+    <Color x:Key="ComicBackgroundColor"   />
+    <Style TargetType="phone:PhoneApplicationPage">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="Sienna" />
+        <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeNormal}"/>
+        
+    </Style>
+
+    <Style TargetType="UserControl">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="Sienna" />
+        <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyNormal}"/>
+        <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeNormal}"/>
+        
+    </Style>
+    
+    <Style TargetType="Grid">
+        <!--<Setter Property="Background" Value="White"></Setter>-->
+    </Style>
+    
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#7F705A"></Setter>
+    </Style>
+    
+    <Style TargetType="bar:BindableApplicationBar" x:Key="ComicAppBarStyle">
+      
+        <Setter Property="BackgroundColor" Value="Orange"></Setter>
+        <Setter Property="ForegroundColor" Value="White"></Setter>
+    </Style>
+    
+    <Style x:Key="ComicPivotHeaderItemStyle" TargetType="primitives:PivotHeaderItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="21,0,1,0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="primitives:PivotHeaderItem">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected"/>
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="contentPresenter"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                          Content="{TemplateBinding Content}" 
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+                                          Opacity="{StaticResource PhonePivotUnselectedItemOpacity}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ComicPivotStyle" TargetType="phone:Pivot">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <Grid/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="phone:Pivot">
+                    <Grid HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
+                                      VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid  Grid.RowSpan="3"/>
+                        <primitives:PivotHeadersControl 
+                                        x:Name="HeadersListElement" Grid.Row="1"
+                                        ItemContainerStyle="{StaticResource ComicPivotHeaderItemStyle}"
+                                        FontFamily="/Comic;component/Fonts/SFUGlytusLight.TTF#SFU Glytus" FontSize="{StaticResource PhoneFontSizeLarge}"
+                                        Foreground="#7F705A"
+                            />
+                        <ItemsPresenter x:Name="PivotItemPresenter" Margin="{TemplateBinding Padding}" Grid.Row="2"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ComicJumpListStyle" TargetType="phone:LongListSelector" >
+        <Setter Property="LayoutMode" Value="Grid"/>
+        <Setter Property="GridCellSize" Value="113,113"/>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border Background="{Binding Converter={StaticResource GroupBackground}}" 
+                                                        Width="99" Height="99"  >
+                        <Border.RenderTransform>
+                            <CompositeTransform TranslateX="NaN" TranslateY="NaN"/>
+                        </Border.RenderTransform>
+                        <TextBlock Text="{Binding Key}" 
+                                        FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                                        FontSize="48"
+                                        Margin="8,0,0,0"
+                                        Foreground="{Binding Converter={StaticResource GroupForeground}}"                                        
+                                        VerticalAlignment="Bottom" TextWrapping="Wrap"/>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
